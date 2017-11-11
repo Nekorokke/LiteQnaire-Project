@@ -1,0 +1,28 @@
+<Template>
+
+ <Block BackgroundColor="skyblue" SplitColor="skyblue">
+  <LabelText Text="Block" FontStyle="bold" FontSize="20" ForeColor="whitesmoke" Position="middle"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Background Color:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+  <ComboBox FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" SelectedIndex="-1">
+    
+  </ComboBox>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Split Color:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+  <ComboBox FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" SelectedIndex="-1">
+    
+  </ComboBox>
+ </Block>
+
+ 
+</Template>

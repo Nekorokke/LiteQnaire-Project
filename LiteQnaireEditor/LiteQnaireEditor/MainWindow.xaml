@@ -1,0 +1,42 @@
+﻿<Window x:Name="mainWindow" x:Class="LiteQnaireEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LiteQnaire Editor" Height="540" Width="778" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="WhiteSmoke" Loaded="WindowLoaded" Closing="WindowsClosing" KeyDown="Window_KeyDown">
+    <Grid Drop="File_Drop" AllowDrop="True">
+
+        <Canvas>
+            <ProgressBar x:Name="savePBar" Height="23" Width="160" Canvas.Left="115" Canvas.Top="6" Visibility="Hidden"/>
+            <Border x:Name="ToolBar" BorderBrush="Gray" BorderThickness="1" Canvas.Left="-10" Height="34" Width="790" Background="LightGray" Opacity="0.35"/>
+
+            <Border x:Name="mainStackBorder" BorderBrush="LightBlue" BorderThickness="1" HorizontalAlignment="Left" Height="420" Margin="151,75,0,0" VerticalAlignment="Top" Width="606" CornerRadius="4" Background="WhiteSmoke"/>
+
+            <ScrollViewer x:Name="scroll" VerticalScrollBarVisibility="Auto" Margin="149,74,18,22" Height="404" Width="600" Grid.RowSpan="2">
+
+                <StackPanel x:Name="mainStackPanel"  Height="401" Width="590"  Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </ScrollViewer>
+            <WrapPanel HorizontalAlignment="Left" Height="33" Margin="6,40,0,0" VerticalAlignment="Top" Width="751" Background="#FF7ABEDE" Grid.RowSpan="2">
+                <TextBlock x:Name="nowSelectedText" Height="32" Width="400" TextWrapping="Wrap" Text=" Nothing Selected" Foreground="White" FontSize="24" />
+                <Image x:Name="upButton" Height="17" Margin="245,0,0,0" Width="12" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="blockupButtonClick" MouseMove="upButtonMouseMove" MouseLeave="upButtonMouseLeave" ToolTip="Move Up"/>
+                <Image x:Name="downButton" Height="17" Margin="15,0,0,0" Canvas.Top="96" Width="12" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="blockdownButtonClick"  MouseMove="downButtonMouseMove" MouseLeave="downButtonMouseLeave" ToolTip="Move Down"/>
+
+                <Image x:Name="editButton" Height="16.5" Margin="15,0,0,0" Canvas.Top="97" Width="15" Stretch="Fill" Cursor="Hand"  MouseMove="editButtonMouseMove" MouseLeave="editButtonMouseLeave" ToolTip="Edit" MouseLeftButtonUp="BlockEditButtonClick" />
+                <Image x:Name="deleteButton" Height="18.5" Margin="10,1,0,0" Width="18.5" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="BlockDeleteButtonClick" MouseMove="deleteButtonMouseMove" MouseLeave="deleteButtonMouseLeave" ToolTip="Delete"/>
+
+            </WrapPanel>
+            <Border BorderBrush="LightBlue" BorderThickness="1" HorizontalAlignment="Left" Height="420" Margin="6,75,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2" CornerRadius="4" Background="WhiteSmoke"/>
+            <Image x:Name="newfileButton" HorizontalAlignment="Left" Height="23" Margin="12,4,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="24"  MouseLeftButtonUp="newfileButton_Click" MouseMove="newfileButtonMouseMove" MouseLeave="newfileButtonMouseLeave" Cursor="Hand" ToolTip="New File (Ctrl+N)"/>
+            <Image x:Name="openButton" HorizontalAlignment="Left" Height="21" Margin="42,6.5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="21" MouseMove="openButtonMouseMove" MouseLeave="openButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="openButton_Click" ToolTip="Open File (Ctrl+O)"/>
+            <Image x:Name="saveButton" HorizontalAlignment="Left" Height="20.5" Margin="72.5,6.5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="20.5"  MouseMove="saveButtonMouseMove" MouseLeave="saveButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="saveButton_Click"/>
+            <ListBox x:Name="ItemList" Height="368" Canvas.Left="10" Canvas.Top="120" Width="132"/>
+            <Image x:Name="additemButton" Height="18" Canvas.Left="122" Canvas.Top="77" Width="18" MouseMove="additemButtonMouseMove" MouseLeave="additemButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="additemButtonClick"/>
+            <Border BorderBrush="LightBlue" BorderThickness="1" Height="24" Canvas.Left="10" Canvas.Top="96" Width="132" CornerRadius="1"/>
+            <Image x:Name="itemupButton" Height="17" Canvas.Left="20" Canvas.Top="99" Width="12" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="itemupButtonClick" MouseMove="upButtonMouseMove" MouseLeave="upButtonMouseLeave" ToolTip="Move Up"/>
+            <Image x:Name="itemdownButton" Height="17" Canvas.Left="47" Canvas.Top="99" Width="12" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="itemdownButtonClick" MouseMove="downButtonMouseMove" MouseLeave="downButtonMouseLeave" ToolTip="Move Down"/>
+
+            <Image x:Name="itemeditButton" Height="16.5" Canvas.Left="89" Canvas.Top="100" Width="15" Stretch="Fill" Cursor="Hand"  MouseMove="editButtonMouseMove" MouseLeave="editButtonMouseLeave" ToolTip="Edit" MouseLeftButtonUp="itemEditButtonClick"/>
+            <Image x:Name="itemdeleteButton" Height="18.5" Canvas.Left="114" Canvas.Top="99" Width="18.5" Stretch="Fill" Cursor="Hand" MouseLeftButtonUp="itemdeleteButtonClick"  MouseMove="deleteButtonMouseMove" MouseLeave="deleteButtonMouseLeave" ToolTip="Delete"/>
+            <Border BorderBrush="Gray" BorderThickness="1" Height="18" Canvas.Left="75" Canvas.Top="99" Width="1"/>
+        </Canvas>
+        <ComboBox x:Name="ItemCombo" HorizontalAlignment="Left" Height="20" Margin="10,77,0,0" VerticalAlignment="Top" Width="110" BorderBrush="{x:Null}"/>
+    </Grid>
+</Window>
