@@ -170,8 +170,6 @@ namespace LiteQnaire
                         bSource = null;
                         getIcon = null;
                         this.Close();
-
-                        MessageBox.Show("Successfully Extracted !", "LiteQnaire", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     }
                 }
             }
