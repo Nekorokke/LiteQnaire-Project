@@ -1,0 +1,78 @@
+<Template>
+
+ <Block BackgroundColor="skyblue" SplitColor="skyblue">
+  <LabelText Text="Text" FontStyle="bold" FontSize="20" ForeColor="whitesmoke" Position="middle"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Text:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block>
+ 
+ <Block BackgroundColor="white" SplitColor="gray">
+  <TextBox Text="" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Long="false" Locked="False"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Font Size:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+ <ComboBox FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" SelectedIndex="-1">
+    <Text>2</Text>
+    <Text>4</Text>
+    <Text>6</Text>
+    <Text>8</Text>
+    <Text>10</Text>
+    <Text>12</Text>
+    <Text>14</Text>
+    <Text>16</Text>
+    <Text>18</Text>
+    <Text>20</Text>
+    <Text>22</Text>
+    <Text>24</Text>
+    <Text>26</Text>
+    <Text>28</Text>
+    <Text>30</Text>
+    <Text>32</Text>
+    <Text>34</Text>
+    <Text>36</Text>
+    <Text>38</Text>
+    <Text>40</Text>
+    <Text>42</Text>
+    <Text>44</Text>
+    <Text>46</Text>
+    <Text>48</Text>
+  </ComboBox>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Font Style:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+  <RadioButton Text="Regular" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Selected="False"/>
+  <RadioButton Text="Bold" FontStyle="bold" FontSize="12" ForeColor="black" Position="middle" Selected="False"/>
+  <RadioButton Text="Italic" FontStyle="italic" FontSize="12" ForeColor="black" Position="middle" Selected="False"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Fore Color:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+  <ComboBox FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" SelectedIndex="-1">
+    
+  </ComboBox>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Position:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+
+ <Block BackgroundColor="white" SplitColor="gray">
+  <RadioButton Text="Left" FontStyle="regular" FontSize="12" ForeColor="black" Position="left" Selected="False"/>
+  <RadioButton Text="Middle" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Selected="False"/>
+  <RadioButton Text="Right" FontStyle="regular" FontSize="12" ForeColor="black" Position="right" Selected="False"/>
+ </Block>
+ 
+</Template>

@@ -1,0 +1,34 @@
+<Template>
+
+ <Block BackgroundColor="skyblue" SplitColor="skyblue">
+  <LabelText Text="Attachment" FontStyle="bold" FontSize="20" ForeColor="whitesmoke" Position="middle"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Text:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block>
+ 
+ <Block BackgroundColor="white" SplitColor="gray">
+  <TextBox Text="" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Long="False" Locked="False"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Filter (Each Line):" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+   <LabelText Text="Example: *.*, *.lqn" FontStyle="regular" FontSize="12" ForeColor="gray" Position="left"/>
+ </Block>
+ 
+ <Block BackgroundColor="white" SplitColor="gray">
+  <TextBox Text="" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Long="True" Locked="False"/>
+ </Block>
+
+ <Block BackgroundColor="aliceblue" SplitColor="aliceblue">
+   <LabelText Text="Position:" FontStyle="regular" FontSize="16" ForeColor="gray" Position="left"/>
+ </Block> 
+ 
+ <Block BackgroundColor="white" SplitColor="gray">
+  <RadioButton Text="Left" FontStyle="regular" FontSize="12" ForeColor="black" Position="left" Selected="False"/>
+  <RadioButton Text="Middle" FontStyle="regular" FontSize="12" ForeColor="black" Position="middle" Selected="False"/>
+  <RadioButton Text="Right" FontStyle="regular" FontSize="12" ForeColor="black" Position="right" Selected="False"/>
+ </Block>
+ 
+</Template>

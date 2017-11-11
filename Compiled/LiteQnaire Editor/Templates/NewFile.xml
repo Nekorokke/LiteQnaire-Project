@@ -1,0 +1,7 @@
+<LiteQnaire>
+
+ <Block BackgroundColor="lightblue" SplitColor="gray">
+  <LabelText Text="Title" FontStyle="bold" FontSize="20" ForeColor="whitesmoke" Position="middle"/>
+ </Block>
+
+</LiteQnaire>
