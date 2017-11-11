@@ -1,0 +1,40 @@
+﻿<Window x:Class="LiteQnaire_Collector.OutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        x:Name="outputWindow"
+        Title="Output" Height="288" Width="235" WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Background="WhiteSmoke" Loaded="Window_Loaded">
+    <Grid >
+        <Canvas >
+            <WrapPanel Canvas.Left="10" Canvas.Top="10" Width="200">
+                <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Index :" Foreground="DimGray" FontWeight="Bold"/>
+                <TextBox x:Name="blockIndexTextbox" Height="16" Canvas.Left="52" TextWrapping="NoWrap" Text="" Margin="10,0,0,0" Width="24" FontSize="11" HorizontalContentAlignment="Center" IsReadOnly="true" Foreground="Gray"/>
+                <TextBlock  Canvas.Left="10" TextWrapping="Wrap" Text="-" Margin="3,0,0,0"/>
+                <TextBox x:Name="itemIndexTextbox" Height="16" Canvas.Left="85" TextWrapping="NoWrap" Text="" Canvas.Top="10" Width="24" FontSize="11" Margin="3,0,0,0" HorizontalContentAlignment="Center" IsReadOnly="True" Foreground="Gray"/>
+            </WrapPanel>
+            <Border BorderBrush="SkyBlue" Opacity="0.45"  BorderThickness="1" Height="2" Canvas.Left="0" Canvas.Top="34" Width="230" CornerRadius="4"/>
+            <Border BorderBrush="SkyBlue" Opacity="0.45"  BorderThickness="1" Height="2" Canvas.Left="0" Canvas.Top="213" Width="230" CornerRadius="4"/>
+            <TextBlock Canvas.Left="18" TextWrapping="Wrap" Text="Line Index :" Foreground="DimGray" FontWeight="Bold" Canvas.Top="70"/>
+            <RadioButton x:Name="columnRadio" Content="Column" Canvas.Left="48" Canvas.Top="96" IsChecked="True" GroupName="output"/>
+            <RadioButton Content="Row" Canvas.Left="128" Canvas.Top="96" IsChecked="False" GroupName="output"/>
+            <Border BorderBrush="Gray" Opacity="0.2"  BorderThickness="1" Height="2" Canvas.Left="10" Canvas.Top="114" Width="200" CornerRadius="4"/>
+            <TextBlock Canvas.Left="18" TextWrapping="Wrap" Text="Start from :" Foreground="DimGray" FontWeight="Bold" Canvas.Top="127"/>
+            <TextBlock Canvas.Left="18" TextWrapping="Wrap" Text="Sheet Name :" Foreground="DimGray" FontWeight="Bold" Canvas.Top="164"/>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Output to" Canvas.Top="42" Foreground="Gray"/>
+            <ComboBox x:Name="sheetsCombo" Canvas.Left="90" Canvas.Top="184" Width="119" FontSize="10"/>
+            <Border BorderBrush="Gray" Opacity="0.2"  BorderThickness="1" Height="2" Canvas.Left="9" Canvas.Top="157" Width="200" CornerRadius="4"/>
+            <TextBox x:Name="startFromTextbox" Height="18" Canvas.Left="120" TextWrapping="Wrap" Text="1" Canvas.Top="126" Width="78" HorizontalContentAlignment="Center" FontSize="12" PreviewTextInput="numTextbox_PreviewTextInput" LostFocus="numTextbox_LostFocus" input:InputMethod.IsInputMethodEnabled="False"/>
+            <TextBox x:Name="lineIndexTextbox" Height="18" Canvas.Left="120" TextWrapping="Wrap" Text="1" Canvas.Top="68" Width="78" HorizontalContentAlignment="Center" FontSize="12" PreviewTextInput="numTextbox_PreviewTextInput" LostFocus="numTextbox_LostFocus" input:InputMethod.IsInputMethodEnabled="False"/>
+            <Border Canvas.Left="153" Canvas.Top="220" BorderBrush="LightGray" BorderThickness="1" CornerRadius="3" Background="WhiteSmoke" Height="23">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1" Color="LightGray" BlurRadius="2"/>
+                </Border.Effect>
+                <Label Content="     OK     " Canvas.Left="28" Canvas.Top="409"  MouseMove="ButtonMouseMove" MouseLeave="ButtonMouseLeave" MouseLeftButtonDown="okButton_Click" MouseLeftButtonUp="ButtonMouseUp" FontSize="11" FontWeight="SemiBold" Foreground="#FF4B4B4B"/>
+            </Border>
+
+
+        </Canvas>
+
+    </Grid>
+</Window>
+

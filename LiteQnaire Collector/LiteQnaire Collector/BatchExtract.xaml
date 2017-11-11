@@ -1,0 +1,42 @@
+﻿<Window x:Class="LiteQnaire_Collector.BatchExtract"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        x:Name="ExtractWindow"
+        Title="Batch Extract" Height="303" Width="235" WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Background="WhiteSmoke" Loaded="Window_Loaded">
+    <Grid>
+        <Canvas>
+            <WrapPanel Canvas.Left="10" Canvas.Top="10" Width="200">
+                <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Index :" Foreground="DimGray" FontWeight="Bold"/>
+                <TextBox x:Name="blockIndexTextbox" Height="16" Canvas.Left="52" TextWrapping="NoWrap" Text="" Margin="10,0,0,0" Width="24" FontSize="11" HorizontalContentAlignment="Center" IsReadOnly="true" Foreground="Gray"/>
+                <TextBlock  Canvas.Left="10" TextWrapping="Wrap" Text="-" Margin="3,0,0,0"/>
+                <TextBox x:Name="itemIndexTextbox" Height="16" Canvas.Left="85" TextWrapping="NoWrap" Text="" Canvas.Top="10" Width="24" FontSize="11" Margin="3,0,0,0" HorizontalContentAlignment="Center" IsReadOnly="True" Foreground="Gray"/>
+            </WrapPanel>
+            <Border BorderBrush="SkyBlue" Opacity="0.45"  BorderThickness="1" Height="2" Canvas.Left="0" Canvas.Top="34" Width="230" CornerRadius="4"/>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Extract to" Canvas.Top="42" Foreground="Gray"/>
+            <TextBlock Canvas.Left="14" TextWrapping="Wrap" Text="Folder :" Foreground="DimGray" FontWeight="Bold" Canvas.Top="68"/>
+            <TextBox Height="20" Canvas.Left="20" TextWrapping="Wrap" Text="" Canvas.Top="88" Width="180" IsReadOnly="True" Cursor="Hand" PreviewMouseLeftButtonUp="folderTextbox_Click"/>
+            <Border BorderBrush="Gray" Opacity="0.2"  BorderThickness="1" Height="2" Canvas.Left="10" Canvas.Top="115" Width="200" CornerRadius="4"/>
+            <TextBlock Canvas.Left="14" TextWrapping="Wrap" Text="Named by :" Foreground="DimGray" FontWeight="Bold" Canvas.Top="121"/>
+            
+            <RadioButton x:Name="enumerateRadio" Content="1,2,3 . . ." Canvas.Left="37" Canvas.Top="143" GroupName="namedby" Checked="otherRadio_Checked"/>
+            <RadioButton x:Name="originRadio" Content="Original LQN File Name" Canvas.Left="37" Canvas.Top="163" GroupName="namedby" Checked="otherRadio_Checked"/>
+            <RadioButton x:Name="attRadio" Content="Attachment File Name" Canvas.Left="37" Canvas.Top="183" GroupName="namedby" Checked="otherRadio_Checked"/>
+            <RadioButton x:Name="indexRadio" Content="Index :" Canvas.Left="37" Canvas.Top="203" GroupName="namedby" IsChecked="False" Checked="indexRadio_Checked"/>
+            
+            <WrapPanel x:Name="namedByWrap" Canvas.Left="111" Canvas.Top="203" Width="73" IsEnabled="False">
+                <TextBox x:Name="nblockIndexTextbox" Height="16" Canvas.Left="52" TextWrapping="NoWrap" Text="" Margin="10,0,0,0" Width="24" FontSize="11" HorizontalContentAlignment="Center" PreviewTextInput="numTextbox_PreviewTextInput" LostFocus="numTextbox_LostFocus" input:InputMethod.IsInputMethodEnabled="False"/>
+                <TextBlock  Canvas.Left="10" TextWrapping="Wrap" Text="-" Margin="3,0,0,0"/>
+                <TextBox x:Name="nitemIndexTextbox" Height="16" Canvas.Left="85" TextWrapping="NoWrap" Text="" Canvas.Top="10" Width="24" FontSize="11" Margin="3,0,0,0" HorizontalContentAlignment="Center" PreviewTextInput="numTextbox_PreviewTextInput" LostFocus="numTextbox_LostFocus" input:InputMethod.IsInputMethodEnabled="False"/>
+            </WrapPanel>
+            <Border BorderBrush="SkyBlue" Opacity="0.45"  BorderThickness="1" Height="2" Canvas.Left="0" Canvas.Top="228" Width="230" CornerRadius="4"/>
+            <Border Canvas.Left="153" Canvas.Top="235" BorderBrush="LightGray" BorderThickness="1" CornerRadius="3" Background="WhiteSmoke" Height="23">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1" Color="LightGray" BlurRadius="2"/>
+                </Border.Effect>
+                <Label Content="     OK     " Canvas.Left="28" Canvas.Top="409"  MouseMove="ButtonMouseMove" MouseLeave="ButtonMouseLeave" MouseLeftButtonDown="okButton_Click" MouseLeftButtonUp="ButtonMouseUp" FontSize="11" FontWeight="SemiBold" Foreground="#FF4B4B4B"/>
+            </Border>
+
+        </Canvas>
+    </Grid>
+</Window>
