@@ -1,0 +1,23 @@
+﻿<Window x:Class="LiteQnaire.AttachmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AttachmentWindow" Height="165" Width="250" WindowStartupLocation="CenterOwner" WindowStyle="None" ResizeMode="NoResize" Background="WhiteSmoke"  Loaded="WindowLoaded" Closing="this_Closing" MouseDown="this_MouseDown" >
+    <Grid>
+        
+        <Image x:Name="closeButton" HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="16" MouseMove="closeButtonMouseMove" MouseLeave="closeButtonMouseLeave" MouseLeftButtonUp="closeButton_Click" Margin="231,3,0,0"/>
+        <Image x:Name="fileImg" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="32" Margin="5,5,0,0"/>
+        <Image x:Name="AddFile" HorizontalAlignment="Left" Height="27" Margin="67,55,0,0" VerticalAlignment="Top" Width="27"/>
+        <Image x:Name="ExtractTo" HorizontalAlignment="Left" Height="27" Margin="67,84,0,0" VerticalAlignment="Top" Width="27"/>
+        <Image x:Name="Delete" HorizontalAlignment="Left" Height="27" Margin="176,135,0,0" VerticalAlignment="Top" Width="27"/>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="165" Margin="0,0,0,0" VerticalAlignment="Top" Width="250">
+            
+        </Border>
+
+        <Label x:Name="title" Content="" HorizontalAlignment="Left" Height="27" Margin="37,-1,0,0" VerticalAlignment="Top" Width="189" FontSize="15" MouseLeftButtonUp="title_Click"/>
+            <Label x:Name="size" Content="Size: " HorizontalAlignment="Left" Height="25" Margin="37,17,0,0" VerticalAlignment="Top" Width="179" Foreground="Gray"/>
+        <Label x:Name="labelAddFile" Content="Add File..." HorizontalAlignment="Left" Height="28" Margin="96,55,0,0" VerticalAlignment="Top" Width="106" FontSize="15" FontWeight="Bold" Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="AddFile_Click"/>
+        <Label x:Name="labelExtractTo" Content="Extract To..." HorizontalAlignment="Left" Height="28" Margin="96,86,0,0" VerticalAlignment="Top" Width="106" FontSize="15" FontWeight="Bold" Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="EF_Click" Cursor="Hand"/>
+        <Label x:Name="labelDelete" Content="Delete" HorizontalAlignment="Left" Height="28" Margin="194,136,0,0" VerticalAlignment="Top" Width="63" FontSize="14"  Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="Delete_Click"/>
+        <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="18" Margin="40,6,0,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="185" Visibility="Hidden" KeyDown="textbox_KeyDown" />
+    </Grid>
+</Window>

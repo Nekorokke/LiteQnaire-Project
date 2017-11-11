@@ -1,0 +1,41 @@
+﻿<Window x:Class="LiteQnaire.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="MainWindow" Height="460" Width="650" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" WindowStartupLocation="CenterScreen"  ResizeMode="CanMinimize"  Loaded="MainWindowLoaded" Closing="Window_Unloaded" KeyDown="Window_KeyDown" >
+    <Grid Drop="File_Drop" AllowDrop="True">
+
+        <Border x:Name="mainWindowBorder" CornerRadius="5" Margin="10,1.045,10,10" BorderThickness="1.5" BorderBrush="Gray" Opacity="1" Grid.RowSpan="2" Grid.Row="1">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="1" Color="Gray" BlurRadius="6"/>
+            </Border.Effect>
+            <Border x:Name="mainBorder" Opacity="1" Margin="0" CornerRadius="4" Background="#FFE8E8E8" >
+                <Canvas HorizontalAlignment="Left" Height="445" VerticalAlignment="Top" Width="626" >
+                    <Border  BorderBrush="#FF8B8484" BorderThickness="1" Height="406" Canvas.Left="10" Canvas.Top="27" Width="606" CornerRadius="4" Background="WhiteSmoke" Opacity="1" />
+
+                    <Border  BorderThickness="0.5" Height="26"  Canvas.Top="0" Width="627" Canvas.Left="0"  MouseLeftButtonDown="dragMove_MouseDown" Background="#FFE8E8E8" />
+                    
+                    <Image Height="20" Canvas.Left="604.5" Width="20" x:Name="closeButton" Stretch="Uniform" MouseLeftButtonUp="closeButtonMouseUp" Canvas.Top="2" MouseMove="closeButtonMouseMove" MouseLeave="closeButtonMouseLeave"/>
+                    <Image Height="20" Canvas.Left="582.5" Width="20" x:Name="minimizeButton" Stretch="Uniform" MouseLeftButtonUp="minimizeButtonMouseUp" Canvas.Top="2" MouseLeave="minimizeButtonMouseLeave" MouseMove="minimizeButtonMouseMove"/>
+                    <Image Height="17" Canvas.Left="126" Width="17" x:Name="openButton" Stretch="Uniform" MouseLeftButtonUp="openButtonMouseUp" Canvas.Top="4" MouseMove="openButtonMouseMove" MouseLeave="openButtonMouseLeave" Cursor="Hand" ToolTip="Open(Ctrl+O)"/>
+                    
+                    <Image Height="16" Canvas.Left="100" Width="16" x:Name="saveButton" Stretch="Uniform" MouseLeftButtonUp="saveButtonMouseUp" Canvas.Top="5" MouseMove="saveButtonMouseMove" MouseLeave="saveButtonMouseLeave" Cursor="Hand"/>
+                    <Image Height="16" Canvas.Left="6.5" Width="16" x:Name="titleIcon" Stretch="Fill" Canvas.Top="6.5"/>
+                    <Label x:Name="titleLabel" Content="LiteQnaire"  FontSize="13" Canvas.Left="20" Canvas.Top="1"  Foreground="Black" Opacity="0.6"/>
+                    <Canvas Height="406" Canvas.Left="10" Canvas.Top="28" Width="610">
+
+                        <ScrollViewer x:Name="scroll" VerticalScrollBarVisibility="Auto" Height="404" Width="603">
+                            <StackPanel x:Name="mainStackPanel"  Height="401" Width="590"  Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        </ScrollViewer>
+
+                    </Canvas>
+                    <Border BorderBrush="LightGray" BorderThickness="0.5" Height="20" Canvas.Left="120" Canvas.Top="3" Width="1"/>
+     
+                    <ProgressBar x:Name="savePBar" Height="19" Canvas.Left="99" Canvas.Top="4" Width="160" Visibility="Hidden" Maximum="1" Minimum="0"/>
+
+                </Canvas>
+
+            </Border>
+        </Border>
+
+    </Grid>
+</Window>
