@@ -17,7 +17,7 @@ using Winform = System.Windows.Forms;
 namespace LiteQnaire_Collector
 {
     /// <summary>
-    /// BatchExtract.xaml 的交互逻辑
+    /// BatchExtract.xaml
     /// </summary>
     public partial class BatchExtract : Window
     {
