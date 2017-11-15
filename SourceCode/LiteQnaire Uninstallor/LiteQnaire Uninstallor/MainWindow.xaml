@@ -1,0 +1,8 @@
+﻿<Window x:Class="LiteQnaire_Uninstallor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Uninstall" Height="0" Width="0" Loaded="Window_Loaded" WindowStyle="None">
+    <Grid>
+        
+    </Grid>
+</Window>
