@@ -58,6 +58,9 @@ namespace LiteQnaireEditor
         BitmapImage saveImg;
         BitmapImage savemoveImg;
 
+        BitmapImage saveasImg;
+        BitmapImage saveasmoveImg;
+
         BitmapImage addImg;
 
         ContextMenu blockPopMenu = new ContextMenu();
@@ -121,6 +124,10 @@ namespace LiteQnaireEditor
             saveImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\save.png", UriKind.Absolute));
             savemoveImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\save_move.png", UriKind.Absolute));
             saveButton.Source = saveImg;
+
+            saveasImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\saveas.png", UriKind.Absolute));
+            saveasmoveImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\saveas_move.png", UriKind.Absolute));
+            saveasButton.Source = saveasImg;
 
             additemImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\additem.png", UriKind.Absolute));
             additemmoveImg = new BitmapImage(new Uri(CurrentDirectory + @"\Image\additem_move.png", UriKind.Absolute));
@@ -1159,11 +1166,12 @@ namespace LiteQnaireEditor
             Save();
         }
 
-        private bool Save()
+        private bool Save(bool SaveAsMode=false)
         {
-            if (isChanged == true)
+            if (isChanged == true || SaveAsMode == true)
             {
-                if (filePath == CacheFolder + @"\Unnamed.lqn")//Path hasn't been settled.
+                string tempFilePath = filePath;
+                if (filePath == CacheFolder + @"\Unnamed.lqn" || SaveAsMode==true)//Path hasn't been settled or save as.
                 {
                     SaveFileDialog sfd = new SaveFileDialog();
                     sfd.Filter = "LQN File|*.lqn";
@@ -1192,11 +1200,17 @@ namespace LiteQnaireEditor
                 fg.Glue(new string[2] { XMLFilepath, XMLFilepath }, 2 + attCount/* ←↑ Calculate the "maxFileCount".*/);
                 PBSetValue(0.8);
 
+                if (SaveAsMode == true) { filePath = tempFilePath; }
                 isChanged = false;
                 PBSetValue(1);
                 savePBar.Visibility = Visibility.Hidden;
             }
-            return true;//Saved successfully.
+            return true;//Successfully saved.
+        }
+
+        private void saveasButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Save(true);
         }
 
         private bool? SaveMessage()
@@ -1439,6 +1453,16 @@ namespace LiteQnaireEditor
         private void saveButtonMouseLeave(object sender, MouseEventArgs e)
         {
             saveButton.Source = saveImg;
+        }
+
+        private void saveasButtonMouseMove(object sender, MouseEventArgs e)
+        {
+            saveasButton.Source = saveasmoveImg;
+        }
+
+        private void saveasButtonMouseLeave(object sender, MouseEventArgs e)
+        {
+            saveasButton.Source = saveasImg;
         }
 
         private void openButtonMouseMove(object sender, MouseEventArgs e)

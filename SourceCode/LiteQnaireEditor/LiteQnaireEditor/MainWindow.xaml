@@ -5,7 +5,7 @@
     <Grid Drop="File_Drop" AllowDrop="True">
 
         <Canvas>
-            <ProgressBar x:Name="savePBar" Height="23" Width="160" Canvas.Left="115" Canvas.Top="6" Visibility="Hidden"/>
+            <ProgressBar x:Name="savePBar" Height="23" Width="160" Canvas.Left="142" Canvas.Top="6" Visibility="Hidden"/>
             <Border x:Name="ToolBar" BorderBrush="Gray" BorderThickness="1" Canvas.Left="-10" Height="34" Width="790" Background="LightGray" Opacity="0.35"/>
 
             <Border x:Name="mainStackBorder" BorderBrush="LightBlue" BorderThickness="1" HorizontalAlignment="Left" Height="420" Margin="151,75,0,0" VerticalAlignment="Top" Width="606" CornerRadius="4" Background="WhiteSmoke"/>
@@ -27,6 +27,7 @@
             <Image x:Name="newfileButton" HorizontalAlignment="Left" Height="23" Margin="12,4,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="24"  MouseLeftButtonUp="newfileButton_Click" MouseMove="newfileButtonMouseMove" MouseLeave="newfileButtonMouseLeave" Cursor="Hand" ToolTip="New File (Ctrl+N)"/>
             <Image x:Name="openButton" HorizontalAlignment="Left" Height="21" Margin="42,6.5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="21" MouseMove="openButtonMouseMove" MouseLeave="openButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="openButton_Click" ToolTip="Open File (Ctrl+O)"/>
             <Image x:Name="saveButton" HorizontalAlignment="Left" Height="20.5" Margin="72.5,6.5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="20.5"  MouseMove="saveButtonMouseMove" MouseLeave="saveButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="saveButton_Click"/>
+            <Image x:Name="saveasButton" HorizontalAlignment="Left" Height="21.5" Margin="104.5,6.5,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="21.5"  MouseMove="saveasButtonMouseMove" MouseLeave="saveasButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="saveasButton_Click" ToolTip="Save As"/>
             <ListBox x:Name="ItemList" Height="368" Canvas.Left="10" Canvas.Top="120" Width="132"/>
             <Image x:Name="additemButton" Height="18" Canvas.Left="122" Canvas.Top="77" Width="18" MouseMove="additemButtonMouseMove" MouseLeave="additemButtonMouseLeave" Cursor="Hand" MouseLeftButtonUp="additemButtonClick"/>
             <Border BorderBrush="LightBlue" BorderThickness="1" Height="24" Canvas.Left="10" Canvas.Top="96" Width="132" CornerRadius="1"/>
