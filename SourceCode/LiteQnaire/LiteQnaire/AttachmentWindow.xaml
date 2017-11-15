@@ -18,6 +18,7 @@
         <Label x:Name="labelAddFile" Content="Add File..." HorizontalAlignment="Left" Height="28" Margin="96,55,0,0" VerticalAlignment="Top" Width="106" FontSize="15" FontWeight="Bold" Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="AddFile_Click"/>
         <Label x:Name="labelExtractTo" Content="Extract To..." HorizontalAlignment="Left" Height="28" Margin="96,86,0,0" VerticalAlignment="Top" Width="106" FontSize="15" FontWeight="Bold" Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="EF_Click" Cursor="Hand"/>
         <Label x:Name="labelDelete" Content="Delete" HorizontalAlignment="Left" Height="28" Margin="194,136,0,0" VerticalAlignment="Top" Width="63" FontSize="14"  Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="Delete_Click"/>
+        <Label x:Name="labelOpen" Content="Open" HorizontalAlignment="Left" Height="28" Margin="4,136,0,0" VerticalAlignment="Top" Width="63" FontSize="14"  Foreground="DimGray" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" MouseLeftButtonUp="Open_Click"/>
         <TextBox x:Name="titleTextBox" HorizontalAlignment="Left" Height="18" Margin="40,6,0,0" TextWrapping="NoWrap" Text="TextBox" VerticalAlignment="Top" Width="185" Visibility="Hidden" KeyDown="textbox_KeyDown" />
     </Grid>
 </Window>

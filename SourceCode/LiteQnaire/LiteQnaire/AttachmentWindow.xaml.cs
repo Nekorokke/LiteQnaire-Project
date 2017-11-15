@@ -52,6 +52,7 @@ namespace LiteQnaire
             
             labelAddFile.Cursor = System.Windows.Input.Cursors.Hand;
             labelDelete.Cursor = System.Windows.Input.Cursors.Hand;
+            labelOpen.Cursor = System.Windows.Input.Cursors.Hand;
             title.Cursor = System.Windows.Input.Cursors.Hand;
             
             //If not use DispatcherTimer to load the icon of file,the programme will crash and I don't know why.
@@ -139,6 +140,14 @@ namespace LiteQnaire
             }
         }
 
+        private void Open_Click(object sender, MouseButtonEventArgs e)
+        {
+            ExtractFile eFile = new ExtractFile(LiteQnaire.MainWindow.filePath);
+            string path=LiteQnaire.MainWindow.CurrentDirectory + "\\Cache\\Open\\" + DateTime.Now.ToFileTime() + System.IO.Path.GetExtension(tempAtt.filename);
+            eFile.ExtractTo(path, tempAtt.fileIndex); 
+            System.Diagnostics.Process.Start(path);
+        }
+
         private void AddFile_Click(object sender, MouseButtonEventArgs e)
         {
             if (tempAtt.isLocked == false)
@@ -170,6 +179,8 @@ namespace LiteQnaire
                         bSource = null;
                         getIcon = null;
                         this.Close();
+
+                        MessageBox.Show("Successfully Extracted !", "LiteQnaire", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     }
                 }
             }
